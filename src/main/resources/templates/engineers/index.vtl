@@ -1,0 +1,27 @@
+<p class="mainHeader"> All engineers </p>
+
+<table>
+    <tr>
+        <th> First Name </th>
+        <th> Last Name </th>
+        <th> Salary </th>
+        <th> Department </th>
+    </tr>
+
+    <tr>
+        #foreach ($engineer in $engineers)
+        <td> $engineer.getFirstName() </td>
+        <td> $engineer.getLastName() </td>
+        <td> $engineer.getSalary() </td>
+        <td> $engineer.getDepartment().getTitle() </td>
+        <td> <a href="/engineers/$engineer.getId()/edit" method ="get"> Edit Form </a> </td>
+        <td> <a href="/engineers/$engineer.getId()"> Show details </a> </td>
+
+    </tr>
+    #end
+
+
+
+</table>
+
+<a href="engineers/new">Record a new engineer </a>

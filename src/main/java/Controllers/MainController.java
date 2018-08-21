@@ -9,6 +9,7 @@ public class MainController {
         Seeds.seedData();
         ManagersController managersController = new ManagersController();
         EmployeesController employeesController = new EmployeesController();
-
+        DepartmentController departmentController = new DepartmentController();
+        EngineersController engineersController = new EngineersController();
     }
 }

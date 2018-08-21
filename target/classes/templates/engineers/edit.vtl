@@ -1,0 +1,22 @@
+<form action="/engineers/$engineer.getId()/edit" method="post">
+
+
+    <label for="firstName"> First Name </label>
+    <input type="text", class="inputbox", name="firstName", required="true", id="firstName", value="$engineer.getfirstName()">
+
+    <label for="lastName"> Last Name </label>
+    <input type="text", class="inputbox", name="lastName", required="true", id="lastName", value="$engineer.getlastName">
+
+    <label for="salary"> Salary </label>
+    <input type="number", class="inputbox", name="salary", required="true", id="salary", value="$engineer.getSalary()">
+
+    <label for="departmentId"> Department </label>
+    <select name="departmentId" id="departmentId">
+        <option label=""></option>
+        #foreach ($department in $departments)
+        # if ($manager.getDepartment.getId()== $department.getId())
+        <option value="$department.getId()" selected> $department.getTitle()</option>
+        #end
+    </select>
+
+</form>
