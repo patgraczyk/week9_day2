@@ -68,11 +68,13 @@ public class EngineersController {
         get("/engineers/:id/edit", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
             Engineer engineer = DBHelper.find(parseInt(req.params(":id")), Engineer.class);
-            model.put("template", "templates/engineers/edit.vtl");
             model.put("engineer", engineer);
+            model.put("template", "templates/engineers/edit.vtl");
+
 
             List<Department> departments = DBHelper.getAll(Department.class);
             model.put("departments", departments);
+
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 

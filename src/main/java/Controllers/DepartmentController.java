@@ -44,7 +44,7 @@ public class DepartmentController {
             DBHelper.save(department);
             res.redirect("/departments");
             return null;
-        });
+        },new VelocityTemplateEngine());
 
 //       works
         get("/departments/:id", (req, res) -> {
