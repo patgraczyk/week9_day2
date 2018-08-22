@@ -16,6 +16,10 @@
         <td> $engineer.getDepartment().getTitle() </td>
         <td> <a href="/engineers/$engineer.getId()/edit" method ="get"> Edit Form </a> </td>
         <td> <a href="/engineers/$engineer.getId()"> Show details </a> </td>
+        <td>  <form action="/departments/$department.getId()>/delete" method="post">
+            <input type="submit" value="Delete">
+        </form>
+        </td>
 
     </tr>
     #end

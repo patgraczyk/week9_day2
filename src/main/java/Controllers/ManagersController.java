@@ -57,20 +57,16 @@ public class ManagersController {
 
 
 
-//        get("/managers/:id/edit", (req, res) -> {
-//            HashMap<String, Object> model = new HashMap<>();
-//            int managerId = Integer.parseInt(req.queryParams(":id"));
-//            Manager manager = DBHelper.find(managerId, Manager.class);
-//
-//
-//            model.put("manager", manager);
-//            model.put("template", "templates/managers/edit.vtl");
-//
-//            List<Department> departments = DBHelper.getAll(Department.class);
-//            model.put("departments", departments);
-//
-//            return  new ModelAndView( model,"templates/layout.vtl");
-//        }, new VelocityTemplateEngine());
+        get("/managers/:id/edit", (req, res) -> {
+            HashMap<String, Object> model = new HashMap<>();
+            int managerId = Integer.parseInt(req.queryParams(":id"));
+            Manager manager = DBHelper.find(managerId, Manager.class);
+            model.put("manager", manager);
+            model.put("template", "templates/managers/edit.vtl");
+            List<Department> departments = DBHelper.getAll(Department.class);
+            model.put("departments", departments);
+            return  new ModelAndView( model,"templates/layout.vtl");
+        }, new VelocityTemplateEngine());
 
 //
 //
